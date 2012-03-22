@@ -36,15 +36,15 @@ var profile = {
     // Uses Closure Compiler as the JavaScript minifier. This can also be set to "shrinksafe" to use ShrinkSafe.
     // Note that you will probably get some “errors” with CC; these are generally safe to ignore, and will be
     // fixed in a later version of Dojo. This defaults to "" (no compression) if not provided.
-    optimize: 'closure',
+    //optimize: 'closure',
 
     // We’re building layers, so we need to set the minifier to use for those, too. This defaults to "shrinksafe" if
     // it is not provided.
-    layerOptimize: 'closure',
-
+    //layerOptimize: 'closure',
+    
     // Strips all calls to console functions within the code. You can also set this to "warn" to strip everything
     // but console.error, and any other truthy value to strip everything but console.warn and console.error.
-    stripConsole: 'all',
+    //stripConsole: 'all',
 
     // The default selector engine is not included by default in a dojo.js build in order to make mobile builds
     // smaller. We add it back here to avoid that extra HTTP request. There is also a "lite" selector available; if
@@ -64,7 +64,8 @@ var profile = {
             // the main application (app/main) and the dojo/i18n and dojo/domReady modules because they are one of the
             // conditional dependencies in app/main (the other being app/Dialog) but we don’t want to have to make
             // extra HTTP requests for such tiny files.
-            include: [ 'dojo/dojo', 'dojo/i18n', 'dojo/domReady', 'app/main', 'app/run' ],
+            include: [ 'dojo/i18n', 'dojo/domReady', 'app/main', 'app/run' ],
+            // 'dojo/dojo'
 
             // By default, the build system will try to include dojo/main in the built dojo/dojo layer, which adds a
             // bunch of stuff we don’t want or need. We want the initial script load to be as small and quick as
@@ -85,11 +86,11 @@ var profile = {
     // support dead code removal; Closure Compiler and UglifyJS do.
     staticHasFeatures: {
         // The trace & log APIs are used for debugging the loader, so we don’t need them in the build
-        'dojo-trace-api':0,
-        'dojo-log-api':0,
+        'dojo-trace-api':1,
+        'dojo-log-api':1,
 
         // This causes normally private loader data to be exposed for debugging, so we don’t need that either
-        'dojo-publish-privates':0,
+        'dojo-publish-privates':1,
 
         // We’re fully async, so get rid of the legacy loader
         'dojo-sync-loader':0,

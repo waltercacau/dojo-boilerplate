@@ -1,3 +1,8 @@
+This is a little fork from Dojo Boilerplate (https://github.com/csnover/dojo-boilerplate)
+
+It is being used to ilustrate a bug with i18n bundles and custom builds in dojo 1.7.2.
+
+
 Dojo Boilerplate: A Starter Kit for Dojo Development
 ====================================================
 
